@@ -39,5 +39,5 @@ To use this component, follow these steps:
 - 
 ## Snapshots
 
-![Assignment SnapShot](https://drive.google.com/file/d/1xGS5Bg72CJR8QyZtyalnp3qiI_MXRJ9F/view?usp=sharing)
+![Assignment SnapShot]([https://drive.google.com/file/d/1xGS5Bg72CJR8QyZtyalnp3qiI_MXRJ9F/view?usp=sharing](https://imgur.com/a/TApIKpd)https://imgur.com/a/TApIKpd)
 
