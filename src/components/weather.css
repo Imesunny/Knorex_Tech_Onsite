@@ -1,0 +1,100 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0 ;
+}
+
+.Main-Container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgb(213, 224, 224);
+  display: flex;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.select-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+select {
+  height: 40px;
+  width: 100%;
+  padding: 2px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.currentDay {
+  width: 45%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.forecast {
+  width: 50%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.currentDay h2,
+.forecast h2 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.currentDay p,
+.forecast p {
+  text-align: center;
+}
+
+.forecast-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid green;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.forecast-item:last-child {
+  margin-bottom: 0;
+}
+
+strong {
+  display: inline-block;
+  height: 38px;
+  line-height: 38px;
+  vertical-align: middle;
+  font-size: 1.2em;
+  margin-right: 10px;
+  position: relative;
+  margin-left: 30px
+}
+
+strong:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  border-radius: 50%;
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}

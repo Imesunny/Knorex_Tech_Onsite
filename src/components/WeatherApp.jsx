@@ -14,15 +14,6 @@ const WeatherComponent = () => {
 
   const baseURLForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
 
-  useEffect(() => {
-    setLoading(true);
-    setError(null);
-
-    fetchWeatherData();
-
-    fetchForecastData();
-  }, [city]);
-
   const fetchWeatherData = async () => {
     try {
       const response = await fetch(baseURLWeather);
@@ -48,20 +39,21 @@ const WeatherComponent = () => {
     }
   };
 
-  const handleCityChange = (e) => {
-    setCity(e.target.value);
-  };
+  useEffect(() => {
+    setLoading(true);
+    setError(null);
+
+    fetchWeatherData();
+
+    fetchForecastData();
+  }, [city]);
 
   return (
     <>
-      <h1>Weather App Assignment</h1>
+      <h1>Assignment</h1>
       <div style={{ display: "flex", alignItems: "center" }}>
         <strong>From:</strong>
-        <select
-          onChange={handleCityChange}
-          value={city}
-          style={{ marginLeft: "10px" }}
-        >
+        <select onChange={(e) => setCity(e.target.value)} value={city}>
           <option value="">Select a city</option>
           <option value="Ho Chi Minh">Ho Chi Minh</option>
           <option value="Singapore">Singapore</option>
@@ -71,20 +63,20 @@ const WeatherComponent = () => {
         </select>
       </div>
 
-      <div className="weather-container">
+      <div className="Main-Container">
         {loading && <p>Loading...</p>}
-        {error && <p className="error-message">{error}</p>}
+        {error && <p>{error}</p>}
         {weatherData && (
-          <div className="current-weather">
+          <div className="currentDay">
             <h2>Current Weather</h2>
             <h4>
               City:
               <span>{weatherData.name}</span>
             </h4>
             <p>Temperature: {weatherData.main.temp} °C</p>
+            <p>Description: {weatherData.weather[0].description}</p>
             <p>Humidity: {weatherData.main.humidity}%</p>
             <p>Wind Speed: {weatherData.wind.speed} m/s</p>
-            <p>Description: {weatherData.weather[0].description}</p>
             {/* <p>Icon: {weatherData.weather[0].icon}</p> */}
           </div>
         )}
