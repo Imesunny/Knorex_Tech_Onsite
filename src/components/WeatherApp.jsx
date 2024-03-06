@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { FiSun, FiCloud, FiCloudRain, FiCloudDrizzle } from "react-icons/fi";
 import "./weather.css";
 
 const WeatherComponent = () => {
@@ -18,7 +19,6 @@ const WeatherComponent = () => {
     try {
       const response = await fetch(baseURLWeather);
       const data = await response.json();
-      console.log(data);
       setWeatherData(data);
       setLoading(false);
     } catch (error) {
@@ -44,9 +44,30 @@ const WeatherComponent = () => {
     setError(null);
 
     fetchWeatherData();
-
     fetchForecastData();
   }, [city]);
+
+  const getIcon = (icon) => {
+    switch (icon) {
+      case "01d":
+        return <FiSun size={32} />;
+      case "02d":
+      case "02n":
+        return <FiCloud size={32} />;
+      case "03d":
+      case "03n":
+      case "04d":
+      case "04n":
+        return <FiCloudDrizzle size={32} />;
+      case "09d":
+      case "09n":
+      case "10d":
+      case "10n":
+        return <FiCloudRain size={32} />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <>
@@ -69,28 +90,32 @@ const WeatherComponent = () => {
         {weatherData && (
           <div className="currentDay">
             <h2>Current Weather</h2>
-            <h4>
-              City:
-              <span>{weatherData.name}</span>
-            </h4>
-            <p>Temperature: {weatherData.main.temp} °C</p>
-            <p>Description: {weatherData.weather[0].description}</p>
-            <p>Humidity: {weatherData.main.humidity}%</p>
-            <p>Wind Speed: {weatherData.wind.speed} m/s</p>
-            {/* <p>Icon: {weatherData.weather[0].icon}</p> */}
+            <div className="weather-card">
+              <h4>
+                City:
+                <span>{weatherData.name}</span>
+              </h4>
+              <p>Temperature: {weatherData.main.temp} °C</p>
+              <p>Description: {weatherData.weather[0].description}</p>
+              <p>Humidity: {weatherData.main.humidity}%</p>
+              <p>Wind Speed: {weatherData.wind.speed} m/s</p>
+              <p>{getIcon(weatherData.weather[0].icon)}</p>
+            </div>
           </div>
         )}
         {forecastData && (
           <div className="forecast">
             <h2>Next 3 Days Weather Forecast</h2>
-            {forecastData.list.slice(0, 3).map((forecast, index) => (
-              <div key={index} className="forecast-item">
-                <p>Date: {forecast.dt_txt.split(" ")[0]}</p>
-                <p>Temperature: {forecast.main.temp} °C</p>
-
-                <p>Description: {forecast.weather[0].description}</p>
-              </div>
-            ))}
+            <div className="forecast-cards">
+              {forecastData.list.slice(0, 3).map((forecast, index) => (
+                <div key={index} className="forecast-card">
+                  <p>Date: {forecast.dt_txt.split(" ")[0]}</p>
+                  <p>Temperature: {forecast.main.temp} °C</p>
+                  <p>Description: {forecast.weather[0].description}</p>
+                  <p>{getIcon(forecast.weather[0].icon)}</p>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>
