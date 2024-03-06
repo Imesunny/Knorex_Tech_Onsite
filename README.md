@@ -17,7 +17,7 @@ This is a simple React component that fetches and displays weather data from the
 - Fetches current weather data and forecast data from the OpenWeatherMap API based on the selected city.
 - Displays the current weather information including temperature, description, humidity, and wind speed.
 - Shows the forecast for the next three days with temperature and description.
-- Handles loading and error states gracefully.
+- Handles loading and error state gracefully.
 
 ## Usage
 
@@ -33,7 +33,10 @@ To use this component, follow these steps:
 
 - React: ^16.8.0 or higher
 - Do npm install
-
+- 
+## To Run on the local environment
+- npm run dev
+- 
 ## Snapshots
 
 ![Assignment SnapShot](https://drive.google.com/file/d/1xGS5Bg72CJR8QyZtyalnp3qiI_MXRJ9F/view?usp=sharing)
