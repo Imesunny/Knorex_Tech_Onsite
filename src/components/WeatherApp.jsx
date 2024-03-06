@@ -3,7 +3,7 @@ import { FiSun, FiCloud, FiCloudRain, FiCloudDrizzle } from "react-icons/fi";
 import "./weather.css";
 
 const WeatherComponent = () => {
-  const apiKey = `310ac9aa425d810e1d282ae1c4915577`;
+  const apiKey = `31b7185bccf137e1855c1c6256268743`;
 
   const [city, setCity] = useState("Singapore");
   const [weatherData, setWeatherData] = useState(null);
