@@ -71,7 +71,7 @@ const WeatherComponent = () => {
 
   return (
     <>
-      <h1>Assignment</h1>
+      <h1>Weather App</h1>
       <div style={{ display: "flex", alignItems: "center" }}>
         <strong>From:</strong>
         <select onChange={(e) => setCity(e.target.value)} value={city}>
