@@ -82,7 +82,7 @@ const WeatherComponent = () => {
         )}
         {forecastData && (
           <div className="forecast">
-            <h2>Next 3 Days Forecast</h2>
+            <h2>Next 3 Days Weather Forecast</h2>
             {forecastData.list.slice(0, 3).map((forecast, index) => (
               <div key={index} className="forecast-item">
                 <p>Date: {forecast.dt_txt.split(" ")[0]}</p>
