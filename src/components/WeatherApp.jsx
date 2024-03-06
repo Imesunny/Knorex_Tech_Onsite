@@ -75,7 +75,6 @@ const WeatherComponent = () => {
       <div style={{ display: "flex", alignItems: "center" }}>
         <strong>From:</strong>
         <select onChange={(e) => setCity(e.target.value)} value={city}>
-          <option value="">Select a city</option>
           <option value="Ho Chi Minh">Ho Chi Minh</option>
           <option value="Singapore">Singapore</option>
           <option value="Kuala Lumpur">Kuala Lumpur</option>
