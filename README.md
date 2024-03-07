@@ -36,7 +36,6 @@ To use this component, follow these steps:
 - 
 ## To Run on the local environment
 - npm run dev
-- 
 ## Snapshots
 
 ![Assignment SnapShot](https://github.com/Imesunny/Knorex_Tech_Onsite/blob/main/WhatsApp%20Image%202024-03-06%20at%204.24.03%20PM.jpeg?raw=true)
