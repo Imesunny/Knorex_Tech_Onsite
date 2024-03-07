@@ -33,7 +33,7 @@ To use this component, follow these steps:
 
 - React: ^16.8.0 or higher
 - Do npm install
-- 
+  
 ## To Run on the local environment
 - npm run dev
 ## Snapshots
