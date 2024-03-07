@@ -10,7 +10,7 @@ body {
   margin: 0 auto;
   padding: 20px;
   border-radius: 5px;
-  background-color: rgb(213, 224, 224);
+  background-color: skyblue;
   display: flex;
   flex-wrap: wrap; 
 }
@@ -45,6 +45,7 @@ select {
   display: flex;
   flex-direction: column;
   justify-content: space-between; 
+  color: black;
 }
 
 .forecast {
@@ -54,6 +55,7 @@ select {
   display: flex;
   flex-direction: column;
   justify-content: space-between; 
+  color: black;
 }
 
 .currentDay h2,
